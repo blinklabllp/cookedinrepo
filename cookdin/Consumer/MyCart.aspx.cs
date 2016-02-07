@@ -38,7 +38,8 @@ public partial class Consumer_MyCart : System.Web.UI.Page
     }
     private void Bind_Area_Detail()
     {
-        ddlarea.DataSource = con1.Select("SP_Area_View");
+        //ddlarea.DataSource = con1.Select("SP_Area_View");
+        ddlarea.DataSource = con1.Select("SPH_Area_View");
         ddlarea.DataTextField = "Area_Name";
         ddlarea.DataValueField = "Area_ID";
         ddlarea.DataBind();
