@@ -1,0 +1,295 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat=server>
+        <meta charset="utf-8">
+        <title>Cook'dIN</title>
+        <!-- Mobile specific metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Force IE9 to render in normal mode -->
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+        <meta name="author" content="" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="application-name" content="" />
+        <!-- Import google fonts - Heading first/ text second -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+        <!-- Css files -->
+        <!-- Icons -->
+        <link href="../admin-template/css/icons.css" rel="stylesheet" />
+        <!-- Bootstrap stylesheets (included template modifications) -->
+        <link href="../admin-template/css/bootstrap.css" rel="stylesheet" />
+        <!-- Plugins stylesheets (all plugin custom css) -->
+        <link href="../admin-template/css/plugins.css" rel="stylesheet" />
+        <!-- Main stylesheets (template main css file) -->
+        <link href="../admin-template/css/main.css" rel="stylesheet" />
+        <!-- Custom stylesheets ( Put your own changes here ) -->
+        <link href="../admin-template/css/custom.css" rel="stylesheet" />
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="#">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="#">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="#">
+        <link rel="apple-touch-icon-precomposed" href="#">
+        <link rel="icon" href="../templete/image/favicon.png" type="image/png">
+        <!-- Windows8 touch icon ( https://www.buildmypinnedsite.com/ )-->
+        <meta name="msapplication-TileColor" content="#3399cc" />
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+        <!-- .#header -->
+        <div id="header">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                cook'dIN<span class="slogan"></span>
+            </a>
+                </div>
+                <div id="navbar-no-collapse" class="navbar-no-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <!--Sidebar collapse button-->
+                            <a href="#" class="collapseBtn leftbar"><i class="s16 minia-icon-list-3"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-right usernav">
+                        <li><a href="Logout.aspx"><i class="s16 icomoon-icon-exit"></i><span class="txt"> Logout</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.nav-collapse -->
+            </nav>
+            <!-- /navbar -->
+        </div>
+        
+        <!-- / #header -->
+        <div id="wrapper">
+            <!-- #wrapper -->
+            <!--Sidebar background-->
+            <div id="sidebarbg" class="hidden-lg hidden-md hidden-sm hidden-xs"></div>
+            <!--Sidebar content-->
+            <div id="sidebar" class="page-sidebar hidden-lg hidden-md hidden-sm hidden-xs">
+                <!-- End search -->
+                <!-- Start .sidebar-inner -->
+                <div class="sidebar-inner">
+                    <!-- Start .sidebar-scrollarea -->
+                    <div class="sidebar-scrollarea">
+                        <div class="sidenav">
+                            <div class="sidebar-widget mb0">
+                                <h6 class="title mb0">Navigation</h6>
+                            </div>
+                            <!-- End .sidenav-widget -->
+                            
+
+                            <div class="mainnav">
+                                <ul>
+                                    <li><a href="Dashboard.aspx"><i class="s16 icomoon-icon-screen-2"></i><span class="txt">Dashboard</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="s16 icomoon-icon-user-4"></i><span class="txt">Chef</span> </a>
+                                        <ul class="sub">
+                                            <li><a href="ListChef.aspx"><i class="s16 icomoon-icon-list"></i><span class="txt">List Chef</span></a>
+                                            </li>
+                                             <li><a href="EditChef.aspx"><i class="s16 icomoon-icon-list"></i><span class="txt">Add Chef</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="s16 icomoon-icon-user-3"></i><span class="txt">Consumer</span><span class="notification red">6</span></a>
+                                        <ul class="sub">
+                                            <li><a href="ListConsumer.aspx"><i class="s16 icomoon-icon-list "></i><span class="txt">List Consumer</span></a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="s16 entypo-icon-settings"></i><span class="txt">Location</span></a>
+                                        <ul class="sub">
+                                            <li><a href="AddState.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">State</span></a>
+                                            </li>
+                                            <li><a href="AddCity.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">City</span></a>
+                                            </li>
+                                            <li><a href="AddArea.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Area</span></a>
+                                            </li>
+                                            <li><a href="AddLandmark.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Landmark</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="s16 icomoon-icon-list-2"></i><span class="txt">ingredient</span></a>
+                                        <ul class="sub">
+                                            <li><a href="Ingridiant.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">ingredient</span></a>
+                                            </li>
+                                            <li><a href="IngridiantCategory.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">ingredient Category</span></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="s16 iconic-icon-image"></i><span class="txt">Dishes</span></a>
+                                        <ul class="sub">
+                                            <li><a href="ListDish.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">View Dishes</span></a>
+                                            </li>
+                                              <li><a href="DishType.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Dish Type</span></a>
+                                            </li>
+                                              <li><a href="DietType.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Diet Type</span></a>
+                                            </li>
+                                              <li><a href="RegionalCuisine.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Regional Cuisine</span></a>
+                                            </li>
+                                            <%-- <li><a href="CommunicationHours.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Communication Hours</span></a>
+                                            </li>--%>
+                                             <li><a href="MealIncludes.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Meal Includes</span></a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </li>
+
+                                           <li><a href="View_NewsLetterSubscriber.aspx"><i class="s16 entypo-icon-settings"></i><span class="txt">subscriber</span></a> </li>
+
+
+                                    <li><a href="#"><i class="s16 entypo-icon-settings"></i><span class="txt">Settings</span></a> </li>
+
+                                     <li>
+                                        <a href="#"><i class="s16 icomoon-icon-list-2"></i><span class="txt">Account</span></a>
+                                        <ul class="sub">
+                                            <li><a href="View_Transaction.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Transaction</span></a></li>
+                                            <li><a href="Payout_Chef_List.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Payout List</span></a></li>
+                                            <li><a href="View_ReadyToPickDishList.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">Ready To Pick Dish List</span></a></li>
+                                        <%--    <li><a href="IngridiantCategory.aspx"><i class="s16 icomoon-icon-plus"></i><span class="txt">ingredient Category</span></a></li>--%>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+
+
+
+                        </div>
+                        <!-- End sidenav -->
+                        <!-- End .sidenav-widget -->
+                        <!-- End .sidenav-widget -->
+                        <!-- End .sidenav-widget -->
+                        <!-- End .sidenav-widget -->
+                    </div>
+                    <!-- End .sidebar-scrollarea -->
+                </div>
+                <!-- End .sidebar-inner -->
+            </div>
+            <!-- End #sidebar -->
+            <!--Sidebar background-->
+          
+            
+            <!-- End #right-sidebar -->
+            <!--Body content-->
+
+            <form id="form2" runat="server">
+            <div id="content" class="page-content clearfix">
+                <div class="page-content clearfix sidebar-page" id="Div1">
+                <div class="contentwrapper">
+                    <!--Content wrapper-->
+                    <div class="heading">
+                        <!--  .heading-->
+                        <h3>Dashboard</h3>
+                        <div class="resBtnSearch">
+                            <a href="#"><span class="s16 icomoon-icon-search-3"></span></a>
+                        </div>
+                        <div class="search">
+                            <!-- .search -->
+                            <form action="search.html" class="form-horizontal" id="searchform">
+                                <input type="text" placeholder="Search here ..." class="top-search from-control">
+                                <input type="submit" value="" class="search-btn">
+                            </form>
+                        </div>
+                        <!--  /search -->
+                        <ul class="breadcrumb"><li>You are here:</li><li><a title="" class="tip" href="index.html" data-original-title="back to dashboard"><i class="s16 icomoon-icon-screen-2"></i></a></li><span class="divider"><i class="s16 icomoon-icon-arrow-right-3"></i></span><li>Dashboard </li></ul>
+                    </div>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+
+
+                <!-- End contentwrapper -->
+            </div>
+            </form>
+            <!-- End #content -->
+            <div id="footer" class="clearfix sidebar-page right-sidebar-page">
+                <!-- Start #footer  -->
+                <p class="pull-left">
+                    Copyrights &copy; 2014 <a href="http://vertilex.co.in/" class="color-blue strong" target="_blank">Vertilex</a>. All rights reserved.
+                </p>
+                <p class="pull-right">
+                    <a href="#" class="mr5">Terms of use</a>
+                    |
+                    <a href="#" class="ml5 mr25">Privacy police</a>
+                </p>
+            </div>
+            <!-- End #footer  -->
+        </div>
+        <!-- / #wrapper -->
+        <!-- Back to top -->
+        <div id="back-to-top"><a href="#">Back to Top</a>
+        </div>
+        <!-- Javascripts -->
+        <!-- Load pace first -->
+        <script src="../admin-template/plugins/core/pace/pace.min.js"></script>
+        <!-- Important javascript libs(put in all pages) -->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/libs/jquery-2.1.1.min.js">\x3C/script>')
+        </script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
+        </script>
+        <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/libs/jquery-migrate-1.2.1.min.js">\x3C/script>')
+        </script>
+        <!--[if lt IE 9]>
+  <script type="text/javascript" src="js/libs/excanvas.min.js"></script>
+  <script type="text/javascript" src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script type="text/javascript" src="js/libs/respond.min.js"></script>
+<![endif]-->
+        <!-- Bootstrap plugins -->
+        <script src="../admin-template/js/bootstrap/bootstrap.js"></script>
+        <!-- Core plugins ( not remove ) -->
+        <script src="../admin-template/js/libs/modernizr.custom.js"></script>
+        <!-- Handle responsive view functions -->
+        <script src="../admin-template/js/jRespond.min.js"></script>
+        <!-- Custom scroll for sidebars,tables and etc. -->
+        <script src="../admin-template/plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="../admin-template/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+        <!-- Remove click delay in touch -->
+        <script src="../admin-template/plugins/core/fastclick/fastclick.js"></script>
+        <!-- Increase jquery animation speed -->
+        <script src="../admin-template/plugins/core/velocity/jquery.velocity.min.js"></script>
+        <!-- Quick search plugin (fast search for many widgets) -->
+        <script src="../admin-template/plugins/core/quicksearch/jquery.quicksearch.js"></script>
+        <!-- Bootbox fast bootstrap modals -->
+        <script src="../admin-template/plugins/ui/bootbox/bootbox.js"></script>
+        <!-- Other plugins ( load only nessesary plugins for every page) -->
+        <script src="../admin-template/js/libs/date.js"></script>
+        <script src="../admin-template/plugins/ui/waypoint/waypoints.js"></script>
+        <script src="../admin-template/plugins/forms/autosize/jquery.autosize.js"></script>
+        <script src="../admin-template/js/jquery.supr.js"></script>
+        <script src="../admin-template/js/main.js"></script>
+        <script src="../admin-template/js/pages/dashboard.js"></script>
+        <script src="../admin-template/js/libs/raphael.js"></script>
+        <script src="../admin-template/plugins/charts/morris/morris.js"></script>
+        <script src="../admin-template/plugins/charts/chartjs/Chart.js"></script>
+        <script src="../admin-template/plugins/forms/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+        <script src="../admin-template/js/pages/profile.js"></script>
+        <script src="../admin-template/plugins/forms/dropzone/dropzone.js"></script>
+        <script src="../admin-template/plugins/ui/lightbox/ekko-lightbox.js"></script>
+        <script src="../admin-template/plugins/forms/checkall/jquery.checkAll.js"></script>
+        <script src="../admin-template/js/pages/gallery.js"></script>
+        <script src="../admin-template/plugins/forms/dropzone/dropzone.js"></script>
+    </body>
+</html>
