@@ -72,7 +72,7 @@
 
                                 <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True"  >
                                     <asp:ListItem Selected="True">Cash On Delivery</asp:ListItem>
-                                    <asp:ListItem>Credit Card</asp:ListItem>
+                                    <%--<asp:ListItem>Credit Card</asp:ListItem>--%>
                                     </asp:RadioButtonList>
 
 

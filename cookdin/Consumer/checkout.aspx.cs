@@ -37,9 +37,8 @@ public partial class Consumer_checkout : System.Web.UI.Page
 }
   catch(Exception ex)
             {
-            }
 
-            
+            }        
         }
     }
     protected void btnProceed_Click(object sender, EventArgs e)

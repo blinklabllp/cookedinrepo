@@ -25,110 +25,181 @@ public class SP_MyConnection
 
     public DataSet Select(string spname)
     {
-        con.Open();
-
-        SqlCommand cmd = new SqlCommand(spname,con);
-        cmd.CommandType = CommandType.StoredProcedure;
-
-        SqlDataAdapter ad = new SqlDataAdapter(cmd);
+        //Declare Variables 
         DataSet ds = new DataSet();
+        try
+        {
+            con.Open();
 
-        ad.Fill(ds);
+            SqlCommand cmd = new SqlCommand(spname, con);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-        cmd.Dispose();
-        con.Close();
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            
 
-        return ds;
+            ad.Fill(ds);
+
+            cmd.Dispose();
+            con.Close();
+
+            return ds;
+        }
+        catch (Exception ex)
+        {
+            //ToDo: Redirect to error page with Errors. 
+            //returning null
+            return null;
+            
+        }
     }
 
     public DataSet Select(string spname, SqlParameter[] p)
     {
-        con.Open();
 
-        SqlCommand cmd = new SqlCommand(spname,con);
-        cmd.CommandType = CommandType.StoredProcedure;
-
-        for (int i = 0; i <= p.Length - 1; i++)
+        try
         {
-            cmd.Parameters.AddWithValue(p[i].ParameterName, p[i].Value);
+
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(spname, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            for (int i = 0; i <= p.Length - 1; i++)
+            {
+                cmd.Parameters.AddWithValue(p[i].ParameterName, p[i].Value);
+            }
+
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+
+            ad.Fill(ds);
+
+            cmd.Dispose();
+            con.Close();
+
+            return ds;
         }
-
-        SqlDataAdapter ad = new SqlDataAdapter(cmd);
-        DataSet ds = new DataSet();
-
-        ad.Fill(ds);
-
-        cmd.Dispose();
-        con.Close();
-
-        return ds;
+        catch (Exception ex)
+        {
+            //ToDo: Redirect to error page with Errors. 
+            //returning null
+            return null;
+        }
     }
 
     public void Ins_Upd_Del(string spname, SqlParameter[] p)
     {
-        con.Open();
-
-        SqlCommand cmd = new SqlCommand(spname,con);
-        cmd.CommandType = CommandType.StoredProcedure;
-
-        /*
-        for (int i = 0; i <= p.Length - 1; i++)
+        try
         {
-            //cmd.Parameters.AddWithValue(p[i].ParameterName, p[i].Value);
+            con.Open();
 
-            //cmd.Parameters.Add(p[i]);
+            SqlCommand cmd = new SqlCommand(spname, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            /*
+            for (int i = 0; i <= p.Length - 1; i++)
+            {
+                //cmd.Parameters.AddWithValue(p[i].ParameterName, p[i].Value);
+
+                //cmd.Parameters.Add(p[i]);
+            }
+            */
+
+            cmd.Parameters.AddRange(p);
+            cmd.ExecuteNonQuery();
+
+            cmd.Dispose();
+            con.Close();
         }
-        */
-
-        cmd.Parameters.AddRange(p);
-        cmd.ExecuteNonQuery();
-
-        cmd.Dispose();
-        con.Close();
+        catch (Exception ex)
+        {
+            //ToDo: Redirect to error page with Errors. 
+         
+        }
     }
 
     public bool CheckData(string spname, SqlParameter[] p)
     {
-        DataSet ds = Select(spname, p);
+        try
+        {
 
-        if (ds.Tables[0].Rows.Count == 0)
-        {
-            return false;
+            DataSet ds = Select(spname, p);
+
+            if (ds.Tables[0].Rows.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
-        else
+        catch (Exception ex)
         {
-            return true;
+            //ToDo: Redirect to error page with Errors. 
+            //returning null
+            return false;
         }
     }
 
     public DataRow SingleRow(string spname, SqlParameter[] p)
     {
-        DataSet ds = Select(spname, p);
+        try
+        {
 
-        return ds.Tables[0].Rows[0];
+            DataSet ds = Select(spname, p);
+
+            return ds.Tables[0].Rows[0];
+        }
+        catch (Exception ex)
+        {
+            //ToDo: Redirect to error page with Errors. 
+            //returning null
+            return null;
+        }
     }
+
 
     public string SingleCell(string spname, SqlParameter[] p)
     {
-        DataSet ds = Select(spname, p);
+        try
+        {
+            DataSet ds = Select(spname, p);
 
-        return ds.Tables[0].Rows[0][0].ToString();
+            return ds.Tables[0].Rows[0][0].ToString();
+        }
+        catch (Exception ex)
+        {
+            //ToDo: Redirect to error page with Errors. 
+            //returning null
+            return null;
+        }
     }
 
     public string getipaddress()
     {
-        string hostName = Dns.GetHostName(); // Retrive the Name of HOST
-        Console.WriteLine(hostName);
-        string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
-
-        string[] iparray = myIP.Split('.');
-
-        string returnip = null;
-        foreach (string a in iparray)
+        try
         {
-            returnip += a;
+
+            string hostName = Dns.GetHostName(); // Retrive the Name of HOST
+            Console.WriteLine(hostName);
+            string myIP = Dns.GetHostByName(hostName).AddressList[0].ToString();
+
+            string[] iparray = myIP.Split('.');
+
+            string returnip = null;
+            foreach (string a in iparray)
+            {
+                returnip += a;
+            }
+            // return myIP;
+            return returnip;
         }
-       // return myIP;
-        return returnip;
+        catch (Exception ex)
+        {
+            //ToDo: Redirect to error page with Errors. 
+            //returning null
+            return null;
+        }
     }
 }
